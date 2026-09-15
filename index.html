@@ -6,7 +6,7 @@
 <title>Undangan Pernikahan – Ilham & Tika</title>
 <link href="https://maps.app.goo.gl/KRYcJBY8dJD6DiLx8" rel="stylesheet">
 <!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -52,6 +52,39 @@
     overflow: hidden;
   }
 
+  /* Ornamen Bunga Pinggir Kiri & Kanan */
+  .side-floral {
+    position: absolute;
+    width: 140px;
+    height: 420px;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.85;
+    filter: drop-shadow(0 4px 8px rgba(92, 10, 32, 0.15));
+  }
+  .side-floral.left {
+    left: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .side-floral.right {
+    right: -15px;
+    top: 50%;
+    transform: translateY(-50%) scaleX(-1);
+  }
+
+  /* Ornamen Bunga Sudut Atas */
+  .corner-floral {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.8;
+  }
+  .corner-floral.top-l { top: 0; left: 0; }
+  .corner-floral.top-r { top: 0; right: 0; transform: scaleX(-1); }
+
   .top-hanging-ornament {
     position: absolute;
     top: 0;
@@ -68,7 +101,7 @@
     max-width: 350px;
     background: linear-gradient(165deg, #7a1529 0%, #540a18 100%);
     border-radius: 175px 175px 0 0;
-    padding: 30px 20px 45px 20px;
+    padding: 25px 20px 45px 20px;
     text-align: center;
     color: #ffffff;
     box-shadow: 0 16px 35px rgba(84, 10, 24, 0.35);
@@ -88,20 +121,21 @@
 
   .arch-header-svg {
     width: 100%;
-    height: 60px;
+    height: 55px;
     margin-top: 5px;
   }
 
-  /* Teks "The Wedding of" */
+  /* Teks "The Wedding of" (Dibuat Lebih Tebal & Dinaikkan Ke Atas) */
   .cover-wedding-of {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 13px;
+    font-size: 15px;
     letter-spacing: 5px;
     text-transform: uppercase;
-    color: var(--gold-light);
-    margin-top: 4px;
-    margin-bottom: 2px;
-    font-weight: 600;
+    color: #f1e4c3;
+    margin-top: -12px;
+    margin-bottom: 4px;
+    font-weight: 700;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
   }
 
   .monogram-box {
@@ -109,8 +143,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 2px 0 12px 0;
-    height: 85px;
+    margin: 0 0 12px 0;
+    height: 80px;
   }
   .monogram-text {
     font-family: 'Playfair Display', serif;
@@ -160,7 +194,6 @@
     margin-bottom: 22px;
   }
 
-  /* Tulis Kaligrafi Arab Keren dengan Efek Glow Emas */
   .arabic-text {
     font-family: 'Amiri', serif;
     font-size: 30px;
@@ -173,7 +206,6 @@
     letter-spacing: 1px;
   }
   
-  /* Arti Bahasa Arab Ditebalkan (Bold) */
   .verse-translation {
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
@@ -888,6 +920,60 @@
 <section id="cover">
   <div class="top-hanging-ornament"></div>
 
+  <!-- Bunga-bunga Pinggiran Kiri, Kanan & Sudut -->
+  <svg class="corner-floral top-l" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0 Q40 10 60 50 Q30 80 0 120" stroke="#7a1529" stroke-width="1.2" opacity="0.4"/>
+    <circle cx="35" cy="35" r="14" fill="#7a1529" opacity="0.75"/>
+    <circle cx="33" cy="33" r="10" fill="#9b1b34"/>
+    <circle cx="31" cy="31" r="5" fill="#c9a84c"/>
+    <path d="M15 65 C30 50 50 55 55 70 C40 80 20 75 15 65 Z" fill="#5c0a20" opacity="0.6"/>
+  </svg>
+
+  <svg class="corner-floral top-r" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0 Q40 10 60 50 Q30 80 0 120" stroke="#7a1529" stroke-width="1.2" opacity="0.4"/>
+    <circle cx="35" cy="35" r="14" fill="#7a1529" opacity="0.75"/>
+    <circle cx="33" cy="33" r="10" fill="#9b1b34"/>
+    <circle cx="31" cy="31" r="5" fill="#c9a84c"/>
+    <path d="M15 65 C30 50 50 55 55 70 C40 80 20 75 15 65 Z" fill="#5c0a20" opacity="0.6"/>
+  </svg>
+
+  <svg class="side-floral left" viewBox="0 0 120 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Ranting Bunga Samping Kiri -->
+    <path d="M-10 20 Q50 100 20 200 T40 380" stroke="#7a1529" stroke-width="1.5" fill="none" opacity="0.5"/>
+    <!-- Bunga 1 -->
+    <circle cx="35" cy="110" r="15" fill="#7a1529"/>
+    <circle cx="32" cy="107" r="11" fill="#9b1b34"/>
+    <circle cx="30" cy="105" r="6" fill="#c9a84c"/>
+    <path d="M45 90 C60 75 75 80 78 95 C62 105 48 100 45 90 Z" fill="#5c0a20"/>
+    <!-- Bunga 2 -->
+    <circle cx="42" cy="240" r="18" fill="#7a1529"/>
+    <circle cx="39" cy="237" r="13" fill="#9b1b34"/>
+    <circle cx="37" cy="235" r="7" fill="#f1e4c3"/>
+    <path d="M55 220 C75 210 85 220 82 235 C65 245 52 235 55 220 Z" fill="#7a1529" opacity="0.8"/>
+    <!-- Daun Emas / Maroon Samping -->
+    <path d="M15 170 Q45 150 55 175 Q25 190 15 170 Z" fill="#c9a84c" opacity="0.8"/>
+    <path d="M20 310 Q50 290 60 315 Q30 330 20 310 Z" fill="#5c0a20" opacity="0.7"/>
+    <circle cx="65" cy="160" r="4" fill="#c9a84c"/>
+    <circle cx="70" cy="280" r="5" fill="#f1e4c3"/>
+  </svg>
+
+  <svg class="side-floral right" viewBox="0 0 120 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Ranting Bunga Samping Kanan (Mirrored) -->
+    <path d="M-10 20 Q50 100 20 200 T40 380" stroke="#7a1529" stroke-width="1.5" fill="none" opacity="0.5"/>
+    <circle cx="35" cy="110" r="15" fill="#7a1529"/>
+    <circle cx="32" cy="107" r="11" fill="#9b1b34"/>
+    <circle cx="30" cy="105" r="6" fill="#c9a84c"/>
+    <path d="M45 90 C60 75 75 80 78 95 C62 105 48 100 45 90 Z" fill="#5c0a20"/>
+    <circle cx="42" cy="240" r="18" fill="#7a1529"/>
+    <circle cx="39" cy="237" r="13" fill="#9b1b34"/>
+    <circle cx="37" cy="235" r="7" fill="#f1e4c3"/>
+    <path d="M55 220 C75 210 85 220 82 235 C65 245 52 235 55 220 Z" fill="#7a1529" opacity="0.8"/>
+    <path d="M15 170 Q45 150 55 175 Q25 190 15 170 Z" fill="#c9a84c" opacity="0.8"/>
+    <path d="M20 310 Q50 290 60 315 Q30 330 20 310 Z" fill="#5c0a20" opacity="0.7"/>
+    <circle cx="65" cy="160" r="4" fill="#c9a84c"/>
+    <circle cx="70" cy="280" r="5" fill="#f1e4c3"/>
+  </svg>
+
   <!-- Kuba Arch Utama -->
   <div class="arch-card">
     <!-- 1. Teks Melengkung Walimatul 'Urs -->
@@ -900,7 +986,7 @@
       </text>
     </svg>
 
-    <!-- Tulisan "The Wedding of" -->
+    <!-- Tulisan "The Wedding of" (Tebal & Lebih Ke Atas) -->
     <div class="cover-wedding-of">The Wedding of</div>
 
     <!-- 2. Logo Monogram (I T) -->
@@ -922,7 +1008,7 @@
       <span>30.10.2026</span>
     </div>
 
-    <!-- 5. Ayat Al-Qur'an (Kaligrafi Glow Emas) -->
+    <!-- 5. Ayat Al-Qur'an -->
     <div class="arabic-text">
       وَخَلَقْنَاكُـمْ أَزْوَاجًـا
     </div>
