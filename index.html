@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Undangan Pernikahan – Ilham & Tika</title>
 <link href="https://maps.app.goo.gl/KRYcJBY8dJD6DiLx8" rel="stylesheet">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Amiri:ital@0;1&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500&family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -32,130 +35,187 @@
     overflow-x: hidden;
   }
 
-  /* ── COVER SECTION ── */
+  /* ── COVER SECTION (ARCH MAROON STYLE) ── */
   #cover {
     position: relative;
     min-height: 100vh;
-    background-color: var(--green-dark);
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='none' stroke='%23C9A84C' stroke-width='0.8'%3E%3Cpath stroke-opacity='0.16' d='M60 25 C64 38 72 46 85 50 C72 54 64 62 60 75 C56 62 48 54 35 50 C48 46 56 38 60 25 Z'/%3E%3Cpath stroke-opacity='0.12' d='M60 35 C62 42 67 47 75 50 C67 53 62 58 60 65 C58 58 53 53 45 50 C53 47 58 42 60 35 Z'/%3E%3Ccircle cx='60' cy='50' r='3.5' fill='%23C9A84C' fill-opacity='0.15'/%3E%3Cpath stroke-opacity='0.1' d='M60 25 C60 12 45 12 45 25 C45 38 60 38 60 25 M60 25 C60 12 75 12 75 25 C75 38 60 38 60 25'/%3E%3Cpath stroke-opacity='0.1' d='M60 75 C60 62 45 62 45 75 C45 88 60 88 60 75 M60 75 C60 62 75 62 75 88 60 75'/%3E%3Cpath stroke-opacity='0.16' d='M0 -10 C4 3 12 11 25 15 C12 19 4 27 0 40 C-4 27 -12 19 -25 15 C-12 11 -4 3 0 -10 Z'/%3E%3Cpath stroke-opacity='0.16' d='M120 -10 C124 3 132 11 145 15 C132 19 124 27 120 40 C116 27 108 19 95 15 C108 11 116 3 120 -10 Z'/%3E%3Cpath stroke-opacity='0.16' d='M0 110 C4 123 12 131 25 135 C12 139 4 147 0 160 C-4 147 -12 139 -25 135 C-12 131 -4 123 0 110 Z'/%3E%3Cpath stroke-opacity='0.16' d='M120 110 C124 123 132 131 145 135 C132 139 124 147 120 160 C116 147 108 139 95 135 C108 131 116 123 120 110 Z'/%3E%3C/g%3E%3C/svg%3E");
+    background-color: #f6f3ed;
+    background-image: 
+      radial-gradient(rgba(108, 19, 37, 0.08) 1px, transparent 0),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill='%236c1325' fill-opacity='0.03'%3E%3Cpath d='M11 18c3.86 0 7-3.14 7-7s-3.14-7-7-7-7 3.14-7 7 3.14 7 7 7zm48 25c3.86 0 7-3.14 7-7s-3.14-7-7-7-7 3.14-7 7 3.14 7 7 7z'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: 24px 24px, 120px 120px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    padding: 60px 24px;
+    padding: 60px 20px 80px;
     overflow: hidden;
   }
 
-  .cover-ornament {
+  .top-hanging-ornament {
     position: absolute;
-    opacity: 0.18;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 140px;
+    background: radial-gradient(circle at 50% -20%, rgba(201, 168, 76, 0.3), transparent 70%);
     pointer-events: none;
   }
-  .cover-ornament.top-left { top: -40px; left: -40px; width: 320px; }
-  .cover-ornament.bottom-right { bottom: -40px; right: -40px; width: 320px; transform: rotate(180deg); }
-  .cover-ornament.top-right { top: -30px; right: -30px; width: 240px; transform: scaleX(-1); }
-  .cover-ornament.bottom-left { bottom: -30px; left: -30px; width: 240px; transform: rotate(180deg) scaleX(-1); }
 
-  .cover-inner {
+  .arch-card {
     position: relative;
+    width: 100%;
+    max-width: 350px;
+    background: linear-gradient(165deg, #7a1529 0%, #540a18 100%);
+    border-radius: 175px 175px 0 0;
+    padding: 35px 20px 45px 20px;
+    text-align: center;
+    color: #ffffff;
+    box-shadow: 0 16px 35px rgba(84, 10, 24, 0.35);
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.12);
     z-index: 2;
-    max-width: 600px;
     animation: fadeUp 1.2s ease both;
   }
 
-  .cover-label {
-    font-family: 'Raleway', sans-serif;
-    font-size: 11px;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 20px;
-  }
-
-  .cover-bismillah {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-size: 18px;
-    color: rgba(201,168,76,0.8);
-    margin-bottom: 32px;
-    letter-spacing: 1px;
-  }
-
-  .cover-divider {
-    width: 80px;
-    height: 1px;
-    background: var(--gold);
-    margin: 0 auto 28px;
-    position: relative;
-  }
-  .cover-divider::before, .cover-divider::after {
+  .arch-card::before {
     content: '';
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--gold);
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpath d='M60 25 C64 38 72 46 85 50 C72 54 64 62 60 75 C56 62 48 54 35 50 C48 46 56 38 60 25 Z' fill='none' stroke='%23ffffff' stroke-width='0.6' stroke-opacity='0.08'/%3E%3C/svg%3E");
+    pointer-events: none;
   }
-  .cover-divider::before { left: -10px; }
-  .cover-divider::after { right: -10px; }
 
-  .cover-names {
+  .arch-header-svg {
+    width: 100%;
+    height: 65px;
+    margin-top: 5px;
+  }
+
+  .monogram-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px 0 15px 0;
+    height: 90px;
+  }
+  .monogram-text {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(52px, 10vw, 88px);
-    color: var(--ivory);
-    line-height: 1.05;
-    margin-bottom: 12px;
+    font-size: 72px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1;
+    letter-spacing: -6px;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  }
+  .monogram-text .italic-initial {
+    font-family: 'Alex Brush', cursive;
+    font-size: 85px;
+    margin-right: -10px;
+    position: relative;
+    z-index: 2;
   }
 
-  .cover-names span {
-    color: var(--gold);
+  .cover-couple-name {
+    font-family: 'Alex Brush', cursive;
+    font-size: 46px;
+    color: #ffffff;
+    line-height: 1.15;
+    margin-bottom: 22px;
+    font-weight: 400;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.25);
   }
-
-  .cover-ampersand {
+  .cover-couple-name span.ampersand {
+    display: block;
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
-    font-size: clamp(36px, 7vw, 60px);
-    color: var(--gold);
-    display: block;
-    line-height: 1;
-    margin: 4px 0;
+    font-size: 26px;
+    color: #f1e4c3;
+    margin: -4px 0;
   }
 
-  .cover-date {
-    font-family: 'Raleway', sans-serif;
+  .cover-dates-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 25px;
+  }
+  .cover-dates-row .divider {
+    opacity: 0.5;
     font-weight: 300;
-    font-size: 15px;
-    letter-spacing: 4px;
-    color: rgba(253,250,243,0.7);
-    margin-top: 28px;
-    text-transform: uppercase;
+  }
+
+  .arabic-text {
+    font-family: 'Amiri', serif;
+    font-size: 26px;
+    color: #ffffff;
+    margin-bottom: 8px;
+    direction: rtl;
+    line-height: 1.4;
+  }
+  .verse-translation {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 13.5px;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 250px;
+    margin: 0 auto;
+    line-height: 1.4;
+  }
+
+  .floral-decoration {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    max-width: 420px;
+    height: 160px;
+    pointer-events: none;
+    z-index: 3;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0 5px;
+  }
+
+  .flower-svg-left, .flower-svg-right {
+    width: 140px;
+    height: 140px;
+    opacity: 0.95;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));
+  }
+  .flower-svg-right {
+    transform: scaleX(-1);
   }
 
   .scroll-hint {
     position: absolute;
-    bottom: 32px;
+    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 8px;
-    z-index: 2;
+    z-index: 4;
     animation: fadeUp 1.8s ease both;
   }
   .scroll-hint span {
     font-size: 10px;
     letter-spacing: 3px;
-    color: rgba(201,168,76,0.6);
+    color: var(--text-muted);
     text-transform: uppercase;
   }
   .scroll-arrow {
     width: 1px;
-    height: 40px;
-    background: linear-gradient(to bottom, transparent, var(--gold));
+    height: 35px;
+    background: linear-gradient(to bottom, transparent, var(--green-dark));
     animation: scrollPulse 2s ease-in-out infinite;
   }
 
@@ -809,46 +869,73 @@
 </head>
 <body>
 
-<!-- ══════════════ COVER ══════════════ -->
+<!-- ══════════════ COVER ARCH MAROON ══════════════ -->
 <section id="cover">
+  <div class="top-hanging-ornament"></div>
 
-  <!-- Corner ornaments using SVG botanical motif -->
-  <svg class="cover-ornament top-left" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M40 280 Q60 200 140 160 Q200 130 260 60" stroke="#C9A84C" stroke-width="1" fill="none"/>
-    <path d="M20 240 Q80 180 140 120 Q180 80 200 20" stroke="#C9A84C" stroke-width="0.7" fill="none"/>
-    <circle cx="140" cy="160" r="5" fill="#C9A84C" opacity="0.6"/>
-    <circle cx="200" cy="130" r="3.5" fill="#C9A84C" opacity="0.4"/>
-    <circle cx="80" cy="200" r="3" fill="#C9A84C" opacity="0.3"/>
-    <path d="M140 160 Q120 140 130 120 Q140 100 160 115 Q175 128 160 145 Z" fill="#C9A84C" opacity="0.5"/>
-    <path d="M200 130 Q185 110 192 92 Q202 74 220 87 Q232 100 218 117 Z" fill="#C9A84C" opacity="0.35"/>
-    <path d="M80 200 Q64 182 70 162 Q80 144 96 158 Q108 172 96 190 Z" fill="#C9A84C" opacity="0.3"/>
-    <path d="M60 270 C50 230 80 200 80 200" stroke="#C9A84C" stroke-width="0.7" fill="none"/>
-    <path d="M140 160 C120 180 90 185 60 195" stroke="#C9A84C" stroke-width="0.7" fill="none"/>
-    <path d="M200 130 C190 160 170 175 150 185" stroke="#C9A84C" stroke-width="0.7" fill="none"/>
-    <circle cx="260" cy="60" r="6" fill="#C9A84C" opacity="0.5"/>
-    <path d="M260 60 Q248 44 252 28 Q262 12 276 24 Q286 36 274 52 Z" fill="#C9A84C" opacity="0.45"/>
-  </svg>
+  <!-- Kuba Arch Utama -->
+  <div class="arch-card">
+    <!-- 1. Teks Melengkung Walimatul 'Urs -->
+    <svg class="arch-header-svg" viewBox="0 0 300 80">
+      <path id="archPath" d="M 35,75 A 115,115 0 0,1 265,75" fill="none" />
+      <text fill="rgba(255,255,255,0.92)" font-family="'Cormorant Garamond', serif" font-size="20" letter-spacing="4">
+        <textPath href="#archPath" startOffset="50%" text-anchor="middle">
+          Walimatul 'Urs
+        </textPath>
+      </text>
+    </svg>
 
-  <svg class="cover-ornament top-right" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M200 220 Q160 160 100 130 Q60 110 20 50" stroke="#C9A84C" stroke-width="1" fill="none"/>
-    <circle cx="100" cy="130" r="5" fill="#C9A84C" opacity="0.6"/>
-    <path d="M100 130 Q115 112 110 95 Q102 80 88 94 Q78 108 92 124 Z" fill="#C9A84C" opacity="0.5"/>
-    <circle cx="55" cy="90" r="3.5" fill="#C9A84C" opacity="0.4"/>
-    <path d="M55 90 Q68 74 64 58 Q56 42 44 54 Q35 66 48 82 Z" fill="#C9A84C" opacity="0.35"/>
-  </svg>
+    <!-- 2. Logo Monogram (I T) -->
+    <div class="monogram-box">
+      <div class="monogram-text">
+        <span class="italic-initial">I</span>T
+      </div>
+    </div>
 
-  <div class="cover-inner">
-    <div class="cover-label">Mengundang Kehadiran Anda</div>
-    <div class="cover-bismillah">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</div>
-    <div class="cover-divider"></div>
-
-    <h1 class="cover-names">
+    <!-- 3. Nama Pasangan -->
+    <div class="cover-couple-name">
       Ilham
-      <span class="cover-ampersand">&</span>
+      <span class="ampersand">&amp;</span>
       Tika
-    </h1>
+    </div>
 
-    <div class="cover-date">Sabtu, 12 Juli 2025</div>
+    <!-- 4. Tanggal Pernikahan -->
+    <div class="cover-dates-row">
+      <span>30.10.2026</span>
+    </div>
+
+    <!-- 5. Ayat Al-Qur'an -->
+    <div class="arabic-text">
+      وَخَلَقْنَاكُمْ أَزْوَاجًا
+    </div>
+    <div class="verse-translation">
+      "Dan Kami jadikan kamu berpasang-pasangan,"
+    </div>
+  </div>
+
+  <!-- Buket Bunga Bawah -->
+  <div class="floral-decoration">
+    <svg class="flower-svg-left" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M10 90 Q30 60 60 50 Q40 80 10 90 Z" fill="#4a0916" opacity="0.8"/>
+      <circle cx="35" cy="65" r="16" fill="#7a1529"/>
+      <circle cx="32" cy="62" r="12" fill="#9b1b34"/>
+      <circle cx="30" cy="60" r="7" fill="#c42847"/>
+      <path d="M45 45 C55 35 70 35 75 45 C65 55 50 50 45 45 Z" fill="#8c1c33"/>
+      <path d="M20 50 C25 35 40 30 45 40 C35 50 25 55 20 50 Z" fill="#c9a84c" opacity="0.85"/>
+      <circle cx="65" cy="40" r="5" fill="#f1e4c3"/>
+      <circle cx="75" cy="48" r="4" fill="#f1e4c3"/>
+    </svg>
+
+    <svg class="flower-svg-right" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M10 90 Q30 60 60 50 Q40 80 10 90 Z" fill="#4a0916" opacity="0.8"/>
+      <circle cx="35" cy="65" r="16" fill="#7a1529"/>
+      <circle cx="32" cy="62" r="12" fill="#9b1b34"/>
+      <circle cx="30" cy="60" r="7" fill="#c42847"/>
+      <path d="M45 45 C55 35 70 35 75 45 C65 55 50 50 45 45 Z" fill="#8c1c33"/>
+      <path d="M20 50 C25 35 40 30 45 40 C35 50 25 55 20 50 Z" fill="#c9a84c" opacity="0.85"/>
+      <circle cx="65" cy="40" r="5" fill="#f1e4c3"/>
+      <circle cx="75" cy="48" r="4" fill="#f1e4c3"/>
+    </svg>
   </div>
 
   <div class="scroll-hint">
@@ -1088,7 +1175,7 @@
         <div class="story-dot"></div>
       </div>
       <div class="story-content">
-        <div class="story-year">2025</div>
+        <div class="story-year">2026</div>
         <div class="story-title-text">Hari Pernikahan</div>
         <div class="story-desc">Akhirnya tiba hari yang paling dinantikan. Dua jiwa yang bersatu dalam satu ikatan suci, dengan cinta, doa, dan harapan untuk selamanya.</div>
       </div>
@@ -1130,7 +1217,7 @@
   <h2 class="section-title">Kami Menantikan<br>Kehadiran Anda</h2>
   <div class="gold-divider"><div class="gold-divider-icon"></div></div>
   <p style="color:rgba(253,250,243,0.55); font-size:14px; max-width:400px; margin:0 auto; line-height:1.7; font-weight:300;">
-    Mohon konfirmasi kehadiran Anda paling lambat 5 Juli 2025
+    Mohon konfirmasi kehadiran Anda paling lambat 25 Oktober 2026
     agar kami dapat mempersiapkan segala sesuatunya dengan baik.
   </p>
 
@@ -1199,7 +1286,7 @@
       WhatsApp
     </a>
     <span style="color:rgba(201,168,76,0.3);">|</span>
-    <a href="mail to :niyhilkosongdua@gmail.com" style="color:var(--gold); text-decoration:none; font-size:13px; letter-spacing:1px; font-weight:500;">
+    <a href="mailto:niyhilkosongdua@gmail.com" style="color:var(--gold); text-decoration:none; font-size:13px; letter-spacing:1px; font-weight:500;">
       Gmail
     </a>
   </div>
@@ -1208,7 +1295,6 @@
     Dibuat dengan cinta &nbsp;✦&nbsp; Ilham & Tika Wedding 2026
   </div>
 
-  <!-- Decorative bottom ornament -->
   <svg style="position:absolute; bottom:0; left:50%; transform:translateX(-50%); opacity:0.05; pointer-events:none;" width="400" height="200" viewBox="0 0 400 200" fill="none">
     <path d="M200 0 Q240 40 280 20 Q320 0 360 40 Q380 60 400 40" stroke="#C9A84C" stroke-width="1"/>
     <path d="M200 0 Q160 40 120 20 Q80 0 40 40 Q20 60 0 40" stroke="#C9A84C" stroke-width="1"/>
