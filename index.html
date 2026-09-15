@@ -52,38 +52,38 @@
     overflow: hidden;
   }
 
-  /* Ornamen Bunga Pinggir Kiri & Kanan */
-  .side-floral {
+  /* Ornamen Rumpun Bunga Mekar Samping */
+  .side-blooms {
     position: absolute;
-    width: 140px;
-    height: 420px;
+    width: 170px;
+    height: 480px;
     pointer-events: none;
-    z-index: 1;
-    opacity: 0.85;
-    filter: drop-shadow(0 4px 8px rgba(92, 10, 32, 0.15));
+    z-index: 3;
+    filter: drop-shadow(0 6px 14px rgba(60, 5, 20, 0.25));
   }
-  .side-floral.left {
-    left: -15px;
-    top: 50%;
+  .side-blooms.left {
+    left: -25px;
+    top: 52%;
     transform: translateY(-50%);
   }
-  .side-floral.right {
-    right: -15px;
-    top: 50%;
+  .side-blooms.right {
+    right: -25px;
+    top: 52%;
     transform: translateY(-50%) scaleX(-1);
   }
 
-  /* Ornamen Bunga Sudut Atas */
-  .corner-floral {
+  /* Ornamen Bunga Mekar Atas */
+  .top-blooms {
     position: absolute;
-    width: 150px;
-    height: 150px;
+    top: -15px;
+    width: 200px;
+    height: 180px;
     pointer-events: none;
-    z-index: 1;
-    opacity: 0.8;
+    z-index: 3;
+    filter: drop-shadow(0 4px 10px rgba(60, 5, 20, 0.2));
   }
-  .corner-floral.top-l { top: 0; left: 0; }
-  .corner-floral.top-r { top: 0; right: 0; transform: scaleX(-1); }
+  .top-blooms.left { left: -25px; }
+  .top-blooms.right { right: -25px; transform: scaleX(-1); }
 
   .top-hanging-ornament {
     position: absolute;
@@ -91,7 +91,7 @@
     left: 0;
     right: 0;
     height: 140px;
-    background: radial-gradient(circle at 50% -20%, rgba(201, 168, 76, 0.3), transparent 70%);
+    background: radial-gradient(circle at 50% -20%, rgba(201, 168, 76, 0.35), transparent 70%);
     pointer-events: none;
   }
 
@@ -101,7 +101,7 @@
     max-width: 350px;
     background: linear-gradient(165deg, #7a1529 0%, #540a18 100%);
     border-radius: 175px 175px 0 0;
-    padding: 25px 20px 45px 20px;
+    padding: 20px 20px 45px 20px;
     text-align: center;
     color: #ffffff;
     box-shadow: 0 16px 35px rgba(84, 10, 24, 0.35);
@@ -119,23 +119,11 @@
     pointer-events: none;
   }
 
+  /* Dual SVG Path untuk Teks Melengkung Walimatul 'Urs & The Wedding of */
   .arch-header-svg {
     width: 100%;
-    height: 55px;
+    height: 90px;
     margin-top: 5px;
-  }
-
-  /* Teks "The Wedding of" (Dibuat Lebih Tebal & Dinaikkan Ke Atas) */
-  .cover-wedding-of {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 15px;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    color: #f1e4c3;
-    margin-top: -12px;
-    margin-bottom: 4px;
-    font-weight: 700;
-    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
   }
 
   .monogram-box {
@@ -143,7 +131,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 0 12px 0;
+    margin: -10px 0 10px 0;
     height: 80px;
   }
   .monogram-text {
@@ -217,25 +205,25 @@
     font-weight: 700;
   }
 
-  .floral-decoration {
+  /* Buket Bunga Mekar Lebat Bawah */
+  .bottom-blooms-wrap {
     position: absolute;
-    bottom: 20px;
+    bottom: 5px;
     width: 100%;
-    max-width: 420px;
-    height: 160px;
+    max-width: 440px;
+    height: 180px;
     pointer-events: none;
-    z-index: 3;
+    z-index: 4;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    padding: 0 5px;
+    padding: 0;
+    filter: drop-shadow(0 6px 14px rgba(60, 5, 20, 0.3));
   }
 
   .flower-svg-left, .flower-svg-right {
-    width: 140px;
-    height: 140px;
-    opacity: 0.95;
-    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));
+    width: 190px;
+    height: 180px;
   }
   .flower-svg-right {
     transform: scaleX(-1);
@@ -243,14 +231,14 @@
 
   .scroll-hint {
     position: absolute;
-    bottom: 20px;
+    bottom: 15px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 8px;
-    z-index: 4;
+    z-index: 5;
     animation: fadeUp 1.8s ease both;
   }
   .scroll-hint span {
@@ -920,74 +908,108 @@
 <section id="cover">
   <div class="top-hanging-ornament"></div>
 
-  <!-- Bunga-bunga Pinggiran Kiri, Kanan & Sudut -->
-  <svg class="corner-floral top-l" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0 0 Q40 10 60 50 Q30 80 0 120" stroke="#7a1529" stroke-width="1.2" opacity="0.4"/>
-    <circle cx="35" cy="35" r="14" fill="#7a1529" opacity="0.75"/>
-    <circle cx="33" cy="33" r="10" fill="#9b1b34"/>
-    <circle cx="31" cy="31" r="5" fill="#c9a84c"/>
-    <path d="M15 65 C30 50 50 55 55 70 C40 80 20 75 15 65 Z" fill="#5c0a20" opacity="0.6"/>
+  <!-- Rumpun Bunga Mekar Lebat Samping Kiri -->
+  <svg class="side-blooms left" viewBox="0 0 160 450" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Daun-daun Latar Belakang -->
+    <path d="M10 50 Q60 20 80 70 Q40 100 10 50 Z" fill="#4a0916"/>
+    <path d="M20 180 Q80 140 100 190 Q50 220 20 180 Z" fill="#3a0512"/>
+    <path d="M15 320 Q70 290 90 340 Q35 370 15 320 Z" fill="#4a0916"/>
+
+    <!-- Bunga Mekar 1 (Atas Samping) -->
+    <g transform="translate(45, 90)">
+      <circle cx="0" cy="0" r="30" fill="#7a1529"/>
+      <path d="M-22 -10 Q0 -35 22 -10 Q28 15 0 28 Q-28 15 -22 -10 Z" fill="#9b1b34"/>
+      <circle cx="0" cy="0" r="18" fill="#b82343"/>
+      <path d="M-12 -5 Q0 -20 12 -5 Q15 10 0 16 Q-15 10 -12 -5 Z" fill="#d93658"/>
+      <circle cx="0" cy="0" r="8" fill="#c9a84c"/>
+      <circle cx="0" cy="0" r="4" fill="#fdf0f3"/>
+    </g>
+
+    <!-- Bunga Mekar 2 (Tengah Utama - Sangat Mekar) -->
+    <g transform="translate(55, 230)">
+      <circle cx="0" cy="0" r="42" fill="#5c0a20"/>
+      <!-- Kelopak Luar Berlapis -->
+      <path d="M-35 -15 Q0 -48 35 -15 Q45 25 0 42 Q-45 25 -35 -15 Z" fill="#7a1529"/>
+      <path d="M-28 -28 Q28 -42 32 0 Q25 35 -20 28 Q-40 0 -28 -28 Z" fill="#9b1b34"/>
+      <circle cx="0" cy="0" r="26" fill="#b82343"/>
+      <path d="M-18 -10 Q0 -28 18 -10 Q22 15 0 24 Q-22 15 -18 -10 Z" fill="#c42847"/>
+      <circle cx="0" cy="0" r="12" fill="#c9a84c"/>
+      <circle cx="0" cy="0" r="6" fill="#f1e4c3"/>
+    </g>
+
+    <!-- Bunga Mekar 3 (Bawah Samping) -->
+    <g transform="translate(40, 360)">
+      <circle cx="0" cy="0" r="32" fill="#7a1529"/>
+      <path d="M-24 -12 Q0 -36 24 -12 Q30 18 0 30 Q-30 18 -24 -12 Z" fill="#9b1b34"/>
+      <circle cx="0" cy="0" r="19" fill="#c42847"/>
+      <circle cx="0" cy="0" r="9" fill="#e8cc85"/>
+      <circle cx="0" cy="0" r="4" fill="#ffffff"/>
+    </g>
+
+    <!-- Kuncup & Bunga Kecil Tambahan -->
+    <circle cx="95" cy="150" r="12" fill="#9b1b34"/>
+    <circle cx="95" cy="150" r="7" fill="#c9a84c"/>
+    <circle cx="105" cy="290" r="14" fill="#7a1529"/>
+    <circle cx="105" cy="290" r="8" fill="#e8cc85"/>
   </svg>
 
-  <svg class="corner-floral top-r" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0 0 Q40 10 60 50 Q30 80 0 120" stroke="#7a1529" stroke-width="1.2" opacity="0.4"/>
-    <circle cx="35" cy="35" r="14" fill="#7a1529" opacity="0.75"/>
-    <circle cx="33" cy="33" r="10" fill="#9b1b34"/>
-    <circle cx="31" cy="31" r="5" fill="#c9a84c"/>
-    <path d="M15 65 C30 50 50 55 55 70 C40 80 20 75 15 65 Z" fill="#5c0a20" opacity="0.6"/>
-  </svg>
-
-  <svg class="side-floral left" viewBox="0 0 120 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <!-- Ranting Bunga Samping Kiri -->
-    <path d="M-10 20 Q50 100 20 200 T40 380" stroke="#7a1529" stroke-width="1.5" fill="none" opacity="0.5"/>
-    <!-- Bunga 1 -->
-    <circle cx="35" cy="110" r="15" fill="#7a1529"/>
-    <circle cx="32" cy="107" r="11" fill="#9b1b34"/>
-    <circle cx="30" cy="105" r="6" fill="#c9a84c"/>
-    <path d="M45 90 C60 75 75 80 78 95 C62 105 48 100 45 90 Z" fill="#5c0a20"/>
-    <!-- Bunga 2 -->
-    <circle cx="42" cy="240" r="18" fill="#7a1529"/>
-    <circle cx="39" cy="237" r="13" fill="#9b1b34"/>
-    <circle cx="37" cy="235" r="7" fill="#f1e4c3"/>
-    <path d="M55 220 C75 210 85 220 82 235 C65 245 52 235 55 220 Z" fill="#7a1529" opacity="0.8"/>
-    <!-- Daun Emas / Maroon Samping -->
-    <path d="M15 170 Q45 150 55 175 Q25 190 15 170 Z" fill="#c9a84c" opacity="0.8"/>
-    <path d="M20 310 Q50 290 60 315 Q30 330 20 310 Z" fill="#5c0a20" opacity="0.7"/>
-    <circle cx="65" cy="160" r="4" fill="#c9a84c"/>
-    <circle cx="70" cy="280" r="5" fill="#f1e4c3"/>
-  </svg>
-
-  <svg class="side-floral right" viewBox="0 0 120 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <!-- Ranting Bunga Samping Kanan (Mirrored) -->
-    <path d="M-10 20 Q50 100 20 200 T40 380" stroke="#7a1529" stroke-width="1.5" fill="none" opacity="0.5"/>
-    <circle cx="35" cy="110" r="15" fill="#7a1529"/>
-    <circle cx="32" cy="107" r="11" fill="#9b1b34"/>
-    <circle cx="30" cy="105" r="6" fill="#c9a84c"/>
-    <path d="M45 90 C60 75 75 80 78 95 C62 105 48 100 45 90 Z" fill="#5c0a20"/>
-    <circle cx="42" cy="240" r="18" fill="#7a1529"/>
-    <circle cx="39" cy="237" r="13" fill="#9b1b34"/>
-    <circle cx="37" cy="235" r="7" fill="#f1e4c3"/>
-    <path d="M55 220 C75 210 85 220 82 235 C65 245 52 235 55 220 Z" fill="#7a1529" opacity="0.8"/>
-    <path d="M15 170 Q45 150 55 175 Q25 190 15 170 Z" fill="#c9a84c" opacity="0.8"/>
-    <path d="M20 310 Q50 290 60 315 Q30 330 20 310 Z" fill="#5c0a20" opacity="0.7"/>
-    <circle cx="65" cy="160" r="4" fill="#c9a84c"/>
-    <circle cx="70" cy="280" r="5" fill="#f1e4c3"/>
+  <!-- Rumpun Bunga Mekar Lebat Samping Kanan (Mirrored) -->
+  <svg class="side-blooms right" viewBox="0 0 160 450" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M10 50 Q60 20 80 70 Q40 100 10 50 Z" fill="#4a0916"/>
+    <path d="M20 180 Q80 140 100 190 Q50 220 20 180 Z" fill="#3a0512"/>
+    <path d="M15 320 Q70 290 90 340 Q35 370 15 320 Z" fill="#4a0916"/>
+    <g transform="translate(45, 90)">
+      <circle cx="0" cy="0" r="30" fill="#7a1529"/>
+      <path d="M-22 -10 Q0 -35 22 -10 Q28 15 0 28 Q-28 15 -22 -10 Z" fill="#9b1b34"/>
+      <circle cx="0" cy="0" r="18" fill="#b82343"/>
+      <path d="M-12 -5 Q0 -20 12 -5 Q15 10 0 16 Q-15 10 -12 -5 Z" fill="#d93658"/>
+      <circle cx="0" cy="0" r="8" fill="#c9a84c"/>
+      <circle cx="0" cy="0" r="4" fill="#fdf0f3"/>
+    </g>
+    <g transform="translate(55, 230)">
+      <circle cx="0" cy="0" r="42" fill="#5c0a20"/>
+      <path d="M-35 -15 Q0 -48 35 -15 Q45 25 0 42 Q-45 25 -35 -15 Z" fill="#7a1529"/>
+      <path d="M-28 -28 Q28 -42 32 0 Q25 35 -20 28 Q-40 0 -28 -28 Z" fill="#9b1b34"/>
+      <circle cx="0" cy="0" r="26" fill="#b82343"/>
+      <path d="M-18 -10 Q0 -28 18 -10 Q22 15 0 24 Q-22 15 -18 -10 Z" fill="#c42847"/>
+      <circle cx="0" cy="0" r="12" fill="#c9a84c"/>
+      <circle cx="0" cy="0" r="6" fill="#f1e4c3"/>
+    </g>
+    <g transform="translate(40, 360)">
+      <circle cx="0" cy="0" r="32" fill="#7a1529"/>
+      <path d="M-24 -12 Q0 -36 24 -12 Q30 18 0 30 Q-30 18 -24 -12 Z" fill="#9b1b34"/>
+      <circle cx="0" cy="0" r="19" fill="#c42847"/>
+      <circle cx="0" cy="0" r="9" fill="#e8cc85"/>
+      <circle cx="0" cy="0" r="4" fill="#ffffff"/>
+    </g>
+    <circle cx="95" cy="150" r="12" fill="#9b1b34"/>
+    <circle cx="95" cy="150" r="7" fill="#c9a84c"/>
+    <circle cx="105" cy="290" r="14" fill="#7a1529"/>
+    <circle cx="105" cy="290" r="8" fill="#e8cc85"/>
   </svg>
 
   <!-- Kuba Arch Utama -->
   <div class="arch-card">
-    <!-- 1. Teks Melengkung Walimatul 'Urs -->
-    <svg class="arch-header-svg" viewBox="0 0 300 80">
-      <path id="archPath" d="M 35,75 A 115,115 0 0,1 265,75" fill="none" />
-      <text fill="rgba(255,255,255,0.92)" font-family="'Cormorant Garamond', serif" font-size="20" letter-spacing="4">
-        <textPath href="#archPath" startOffset="50%" text-anchor="middle">
-          Walimatul 'Urs
+    
+    <!-- 1. Teks Melengkung Walimatul 'Urs & The Wedding of dalam Jalur SVG Arc Pararel -->
+    <svg class="arch-header-svg" viewBox="0 0 300 95">
+      <path id="archPath1" d="M 25,65 A 125,125 0 0,1 275,65" fill="none" />
+      <path id="archPath2" d="M 45,84 A 105,105 0 0,1 255,84" fill="none" />
+      
+      <!-- Walimatul 'Urs (Melengkung Paling Atas) -->
+      <text fill="rgba(255,255,255,0.95)" font-family="'Cormorant Garamond', serif" font-size="19" letter-spacing="4" font-weight="700">
+        <textPath href="#archPath1" startOffset="50%" text-anchor="middle">
+          WALIMATUL 'URS
+        </textPath>
+      </text>
+
+      <!-- The Wedding of (Melengkung Disesuaikan Persis Di Bawah Walimatul 'Urs) -->
+      <text fill="#f1e4c3" font-family="'Cormorant Garamond', serif" font-size="14" letter-spacing="5" font-weight="700">
+        <textPath href="#archPath2" startOffset="50%" text-anchor="middle">
+          THE WEDDING OF
         </textPath>
       </text>
     </svg>
-
-    <!-- Tulisan "The Wedding of" (Tebal & Lebih Ke Atas) -->
-    <div class="cover-wedding-of">The Wedding of</div>
 
     <!-- 2. Logo Monogram (I T) -->
     <div class="monogram-box">
@@ -1008,7 +1030,7 @@
       <span>30.10.2026</span>
     </div>
 
-    <!-- 5. Ayat Al-Qur'an -->
+    <!-- 5. Ayat Al-Qur'an (Kaligrafi Glow Emas) -->
     <div class="arabic-text">
       وَخَلَقْنَاكُـمْ أَزْوَاجًـا
     </div>
@@ -1019,28 +1041,48 @@
     </div>
   </div>
 
-  <!-- Buket Bunga Bawah -->
-  <div class="floral-decoration">
-    <svg class="flower-svg-left" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M10 90 Q30 60 60 50 Q40 80 10 90 Z" fill="#4a0916" opacity="0.8"/>
-      <circle cx="35" cy="65" r="16" fill="#7a1529"/>
-      <circle cx="32" cy="62" r="12" fill="#9b1b34"/>
-      <circle cx="30" cy="60" r="7" fill="#c42847"/>
-      <path d="M45 45 C55 35 70 35 75 45 C65 55 50 50 45 45 Z" fill="#8c1c33"/>
-      <path d="M20 50 C25 35 40 30 45 40 C35 50 25 55 20 50 Z" fill="#c9a84c" opacity="0.85"/>
-      <circle cx="65" cy="40" r="5" fill="#f1e4c3"/>
-      <circle cx="75" cy="48" r="4" fill="#f1e4c3"/>
+  <!-- Buket Bunga Mekar Lebat Bagian Bawah -->
+  <div class="bottom-blooms-wrap">
+    <!-- Buket Bunga Mekar Kiri Bawah -->
+    <svg class="flower-svg-left" viewBox="0 0 190 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M10 170 Q70 90 140 100 Q100 160 10 170 Z" fill="#3a0512" opacity="0.9"/>
+      <!-- Bunga Mekar Utama Bawah Kiri -->
+      <g transform="translate(65, 115)">
+        <circle cx="0" cy="0" r="38" fill="#5c0a20"/>
+        <path d="M-30 -12 Q0 -42 30 -12 Q38 22 0 38 Q-38 22 -30 -12 Z" fill="#7a1529"/>
+        <circle cx="0" cy="0" r="24" fill="#9b1b34"/>
+        <path d="M-15 -8 Q0 -22 15 -8 Q18 12 0 20 Q-18 12 -15 -8 Z" fill="#c42847"/>
+        <circle cx="0" cy="0" r="10" fill="#c9a84c"/>
+        <circle cx="0" cy="0" r="5" fill="#ffffff"/>
+      </g>
+      <!-- Bunga Mekar 2 Kiri Bawah -->
+      <g transform="translate(130, 80)">
+        <circle cx="0" cy="0" r="28" fill="#7a1529"/>
+        <circle cx="0" cy="0" r="18" fill="#9b1b34"/>
+        <circle cx="0" cy="0" r="9" fill="#e8cc85"/>
+      </g>
+      <circle cx="155" cy="135" r="12" fill="#c42847"/>
+      <circle cx="155" cy="135" r="6" fill="#fdf0f3"/>
     </svg>
 
-    <svg class="flower-svg-right" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M10 90 Q30 60 60 50 Q40 80 10 90 Z" fill="#4a0916" opacity="0.8"/>
-      <circle cx="35" cy="65" r="16" fill="#7a1529"/>
-      <circle cx="32" cy="62" r="12" fill="#9b1b34"/>
-      <circle cx="30" cy="60" r="7" fill="#c42847"/>
-      <path d="M45 45 C55 35 70 35 75 45 C65 55 50 50 45 45 Z" fill="#8c1c33"/>
-      <path d="M20 50 C25 35 40 30 45 40 C35 50 25 55 20 50 Z" fill="#c9a84c" opacity="0.85"/>
-      <circle cx="65" cy="40" r="5" fill="#f1e4c3"/>
-      <circle cx="75" cy="48" r="4" fill="#f1e4c3"/>
+    <!-- Buket Bunga Mekar Kanan Bawah (Mirrored) -->
+    <svg class="flower-svg-right" viewBox="0 0 190 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M10 170 Q70 90 140 100 Q100 160 10 170 Z" fill="#3a0512" opacity="0.9"/>
+      <g transform="translate(65, 115)">
+        <circle cx="0" cy="0" r="38" fill="#5c0a20"/>
+        <path d="M-30 -12 Q0 -42 30 -12 Q38 22 0 38 Q-38 22 -30 -12 Z" fill="#7a1529"/>
+        <circle cx="0" cy="0" r="24" fill="#9b1b34"/>
+        <path d="M-15 -8 Q0 -22 15 -8 Q18 12 0 20 Q-18 12 -15 -8 Z" fill="#c42847"/>
+        <circle cx="0" cy="0" r="10" fill="#c9a84c"/>
+        <circle cx="0" cy="0" r="5" fill="#ffffff"/>
+      </g>
+      <g transform="translate(130, 80)">
+        <circle cx="0" cy="0" r="28" fill="#7a1529"/>
+        <circle cx="0" cy="0" r="18" fill="#9b1b34"/>
+        <circle cx="0" cy="0" r="9" fill="#e8cc85"/>
+      </g>
+      <circle cx="155" cy="135" r="12" fill="#c42847"/>
+      <circle cx="155" cy="135" r="6" fill="#fdf0f3"/>
     </svg>
   </div>
 
